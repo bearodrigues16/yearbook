@@ -9,15 +9,44 @@ html,body{
 
 	background-color: #2B00B3;
 	border-bottom-style: solid 2px #283043;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
 
 }
 
 #yearbook{
 
 	font-family: helvetica, sans;
-	color:#2D2B47;
+	color:white;
 	font-weight: bold;
-	font-size: 25px;												
+	font-size: 25px;
 
+
+
+}
+
+.login{
+
+	float:right;
+	padding-right: 5px;
+	
+
+}
+
+.login input{
+
+	border: none;
+	border-radius: 5px;
+	padding: 3px;
+
+
+}
+
+.login label{
+
+	font-family: helvetica, sans;
+	font-size: 17px;
+	color:white;
 
 }
