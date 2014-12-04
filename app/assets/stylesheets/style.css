@@ -1,0 +1,23 @@
+html,body{
+	margin: 0;
+	padding: 0;
+
+}
+
+
+#head{
+
+	background-color: #2B00B3;
+	border-bottom-style: solid 2px #283043;
+
+}
+
+#yearbook{
+
+	font-family: helvetica, sans;
+	color:#2D2B47;
+	font-weight: bold;
+	font-size: 25px;												
+
+
+}
