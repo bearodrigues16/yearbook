@@ -34,4 +34,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  config.logger=Logger.new(STDOUT)
+ # config.logger=Log4r::Logger.new("ola")
 end

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  post 'users/login' => 'users#login'
+  get 'users/welcome' => 'users#welcome'
+  get 'users/logout' => 'users#logout'
+
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

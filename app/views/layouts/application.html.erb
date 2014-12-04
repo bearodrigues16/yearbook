@@ -12,19 +12,31 @@
 	
 	<span id="yearbook">
 
-	YearBook
+	<a href="/">YearBook</a>
 
 	</span>
 
-	<form class="login">
+	<% if @estaLogado != 0 && @estaLogado != nil && @estaLogado == true %>
+ 	
+ 		<a href="/users/logout" class="logout">Sair</a>
+	
+
+	<% else %>
+	
+
+	<form class="login" method="POST" action="/users/login">
 
 		<label>Login </label><input type="text" name="login" placeholder="login" >
 		<label>Senha </label><input type="password" name="senha" placeholder="senha">
+		<button type="submit">Entrar</button>
+		<%= token_tag nil %>
 
 
 	</form>
 
+	<%end%>
 </header>
+
 
 <%= yield %>
 

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logado, only: [:welcome]
 
   # GET /users
   # GET /users.json
@@ -61,6 +62,34 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+
+    users = User.where(login: params[:login], senha: params[:senha])
+
+    if users[0] != nil && users[0] !=0
+      session[:user_id] = users[0].id
+      redirect_to "/users/welcome",status: :found
+
+    else
+      @message = "Usuário não cadastrado."
+    end
+
+
+   end
+   def welcome
+
+    usuario = User.find(session[:user_id])
+
+    @nome = usuario.nome
+
+   end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to "/", status: :found
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -71,4 +100,14 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:login, :senha, :foto, :nome, :cidade, :estado, :email, :descricao)
     end
+    def logado
+      if session[:user_id] != nil && session[:user_id] != 0
+      @estaLogado = true
+      @usuario = User.find(session[:user_id])
+      else
+        redirect_to "/", status: :found
+      end
+    end
 end
+
+

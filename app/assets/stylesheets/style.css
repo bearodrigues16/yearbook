@@ -50,3 +50,46 @@ html,body{
 	color:white;
 
 }
+
+#head a {
+
+	text-decoration: none;
+	color:white;
+
+
+}
+
+#head a:hover{
+
+	background-color: transparent;
+}
+
+.img_inicial{
+
+	width:100%;
+
+}
+
+.title{
+
+	font-size: 35px;
+	padding-top: 40px;
+	text-align: center;
+	font-family: helvetica, sans;
+}
+
+.content{
+
+	margin-right: 40px;
+	margin-left: 40px;
+	text-align: justify;
+
+
+}
+.logout{
+
+	float: right;
+	margin-right: 10px;
+	font-size: 17px;
+
+}
