@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :logado, only: [:welcome]
+  before_action :naoLogado, only: [:new, :create]
+
 
   # GET /users
   # GET /users.json
@@ -106,6 +108,11 @@ class UsersController < ApplicationController
       @usuario = User.find(session[:user_id])
       else
         redirect_to "/", status: :found
+      end
+    end
+    def naoLogado
+      if session[:user_id] != nil && session[:user_id] !=0
+        redirect_to "/users/welcome", status: :found
       end
     end
 end

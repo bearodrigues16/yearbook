@@ -1,6 +1,7 @@
 html,body{
 	margin: 0;
 	padding: 0;
+	background-color: #E3E6F3;
 
 }
 
@@ -76,6 +77,7 @@ html,body{
 	padding-top: 40px;
 	text-align: center;
 	font-family: helvetica, sans;
+
 }
 
 .content{
@@ -91,5 +93,104 @@ html,body{
 	float: right;
 	margin-right: 10px;
 	font-size: 17px;
+}
+.cadastrar{
+
+	color: white;
+
+
+}
+
+#titulo{
+
+	border-radius: 2px;
+	border-style: solid 2px #283043;
+
+
+}
+
+#telaCadastro{
+
+	border: dashed 5px #2D2E9E;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	padding: 15px;
+	width: 350px;
+
+
+}
+
+.field,
+.actions {
+	clear: both;
+	height: 25px;
+}
+
+.field input{
+
+	clear:both;
+	float:right;
+	display: inline;
+	margin-top: -20px;
+}
+
+.field label{
+
+	float:left;
+	clear:both;
+	display: inline;
+
+}
+#join{
+
+	color:#00104D;
+	text-align: center;
+
+
+
+}
+#cancelar{
+
+	border:solid 2px #00104D;
+	background-color:#313778;
+	border-radius: 5px;
+	margin: 0 auto;
+	width: 55px;
+
+}
+
+.actions input{
+
+	background-color: transparent;
+	border:none;
+	color:white;
+
+}
+
+.actions{
+
+	border:solid 2px #00104D;
+	background-color:#313778;
+	border-radius: 5px;
+	height: 20px;
+	margin: 0 auto;
+	width: 75px;
+
+
+}
+
+#cancelar a{
+
+	color:white;
+	text-decoration: none;
+
+
+}
+
+#cancelar a:hover{
+
+	background-color: transparent;
 
 }

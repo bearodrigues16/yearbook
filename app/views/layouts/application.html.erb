@@ -29,6 +29,8 @@
 		<label>Login </label><input type="text" name="login" placeholder="login" >
 		<label>Senha </label><input type="password" name="senha" placeholder="senha">
 		<button type="submit">Entrar</button>
+
+		<small class="cadastrar"><a href="/users/new">Ainda não é cadastrado?</a></small>
 		<%= token_tag nil %>
 
 
@@ -37,8 +39,9 @@
 	<%end%>
 </header>
 
-
+<div id="main">
 <%= yield %>
+</div>
 
 </body>
 </html>
