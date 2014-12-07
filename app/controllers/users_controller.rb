@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logado, only: [:welcome]
+  before_action :logado, only: [:welcome, :show, :busca]
   before_action :naoLogado, only: [:new, :create]
+  before_action :ehUsuarioLogado, only: [:update, :edit]
 
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.limit(10)
+
+    if session[:user_id] != nil && session[:user_id] != 0
+      @estaLogado = true
+    end
   end
 
   # GET /users/1
@@ -84,11 +89,17 @@ class UsersController < ApplicationController
 
     @nome = usuario.nome
 
+    @users = User.limit(10)
+
    end
 
   def logout
     session[:user_id] = nil
     redirect_to "/", status: :found
+  end
+
+  def busca
+    @resultados = User.where([" nome LIKE ?", "%#{params[:consulta]}%"])
   end
 
 
@@ -100,7 +111,9 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:login, :senha, :foto, :nome, :cidade, :estado, :email, :descricao)
+      paramsCopy = params.require(:user).permit(:login, :senha, :permit, :nome, :cidade, :estado, :email, :descricao)
+      paramsCopy[:avatar]= params[:user][:avatar].read
+      paramsCopy
     end
     def logado
       if session[:user_id] != nil && session[:user_id] != 0
@@ -113,6 +126,16 @@ class UsersController < ApplicationController
     def naoLogado
       if session[:user_id] != nil && session[:user_id] !=0
         redirect_to "/users/welcome", status: :found
+      end
+    end
+
+    def ehUsuarioLogado
+      if session[:user_id] != nil && session[:user_id] !=0
+        if session[:user_id] != params[:id]
+          redirect_to "/users", status: :found
+        end
+      else
+          redirect_to "/users/new", status: :found
       end
     end
 end

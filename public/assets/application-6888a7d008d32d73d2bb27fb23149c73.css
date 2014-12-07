@@ -1,0 +1,295 @@
+/* line 1, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+/* line 23, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #666;
+}
+/* line 26, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 33, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 38, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 42, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 48, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 65, /home/beatriz/yearbook/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+html,body{
+	margin: 0;
+	padding: 0;
+	background-color: #E3E6F3;
+
+}
+
+
+#head{
+
+	background-color: #2B00B3;
+	border-bottom-style: solid 2px #283043;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+
+}
+
+#yearbook{
+
+	font-family: helvetica, sans;
+	color:white;
+	font-weight: bold;
+	font-size: 25px;
+
+
+
+}
+
+.login{
+
+	float:right;
+	padding-right: 5px;
+	
+
+}
+
+.login input{
+
+	border: none;
+	border-radius: 5px;
+	padding: 3px;
+
+
+}
+
+.login label{
+
+	font-family: helvetica, sans;
+	font-size: 17px;
+	color:white;
+
+}
+
+#head a {
+
+	text-decoration: none;
+	color:white;
+
+
+}
+
+#head a:hover{
+
+	background-color: transparent;
+}
+
+.img_inicial{
+
+	width:100%;
+	border-bottom: 3px solid white;
+}
+
+.title{
+
+	font-size: 35px;
+	padding-top: 40px;
+	text-align: center;
+	font-family: helvetica, sans;
+
+}
+
+.content{
+
+	margin-right: 40px;
+	margin-left: 40px;
+	text-align: justify;
+
+
+}
+.logout{
+
+	float: right;
+	margin-right: 10px;
+	font-size: 17px;
+}
+.cadastrar{
+
+	color: white;
+
+
+}
+
+#titulo{
+
+
+
+}
+
+#telaCadastro{
+
+	border: dashed 5px #2D2E9E;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	padding: 15px;
+	width: 350px;
+
+
+}
+
+.field,
+.actions {
+	clear: both;
+	height: 25px;
+}
+
+.field input,
+.field select {
+
+	clear:both;
+	float:right;
+	display: inline;
+	margin-top: -20px;
+}
+
+.field label{
+
+	float:left;
+	clear:both;
+	display: inline;
+
+}
+#join{
+
+	color:#00104D;
+	text-align: center;
+
+
+
+}
+#cancelar{
+
+	border:solid 2px #00104D;
+	background-color:#313778;
+	border-radius: 5px;
+	margin: 0 auto;
+	width: 55px;
+
+}
+
+.actions input{
+
+	background-color: transparent;
+	border:none;
+	color:white;
+
+}
+
+.actions{
+
+	border:solid 2px #00104D;
+	background-color:#313778;
+	border-radius: 5px;
+	height: 20px;
+	margin: 0 auto;
+	width: 75px;
+
+
+}
+
+#cancelar a{
+
+	color:white;
+	text-decoration: none;
+
+
+}
+
+#cancelar a:hover{
+
+	background-color: transparent;
+
+}
+
+.profile_img {
+	width: 150px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+

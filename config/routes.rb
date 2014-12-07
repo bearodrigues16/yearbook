@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'avatar/serve'
+
   post 'users/login' => 'users#login'
   get 'users/welcome' => 'users#welcome'
   get 'users/logout' => 'users#logout'
+  get 'users/busca' => 'users#busca'
 
+
+  get '/avatar/:id' => 'avatar#serve'
 
   resources :users
 

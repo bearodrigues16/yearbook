@@ -1,0 +1,8 @@
+<% @resultados.each do |r| %>
+
+	<div>
+	  <div><%= image_tag "/avatar/#{r.id}", :class=>  "profile_img" %></div>
+	  <div><a href="/users/<%= "#{r.id}"%>"><%= r.nome %></a></div>
+	</div>
+
+<% end %>

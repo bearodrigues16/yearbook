@@ -1,1 +1,16 @@
 olá <%= @usuario.nome %>
+
+<%= image_tag "/avatar/#{@usuario.id}", :class=>  "profile_img" %>
+
+<%= link_to 'Editar meu perfil', edit_user_path(@usuario) %>
+
+<div id="users">
+  <% @users.each do |u| %>
+    
+  <div>
+    <div><%= image_tag "/avatar/#{u.id}", :class=>  "profile_img" %></div>
+    <div><a href="/users/<%= "#{u.id}"%>"><%= u.nome %></a></div>
+  </div>
+
+  <% end %>
+</div>

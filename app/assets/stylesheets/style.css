@@ -68,7 +68,7 @@ html,body{
 .img_inicial{
 
 	width:100%;
-
+	border-bottom: 3px solid white;
 }
 
 .title{
@@ -103,8 +103,6 @@ html,body{
 
 #titulo{
 
-	border-radius: 2px;
-	border-style: solid 2px #283043;
 
 
 }
@@ -128,7 +126,8 @@ html,body{
 	height: 25px;
 }
 
-.field input{
+.field input,
+.field select {
 
 	clear:both;
 	float:right;
@@ -193,4 +192,8 @@ html,body{
 
 	background-color: transparent;
 
+}
+
+.profile_img {
+	width: 150px;
 }

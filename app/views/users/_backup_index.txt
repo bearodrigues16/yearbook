@@ -16,13 +16,43 @@
 
 </div>
 
-<div id="users">
-  <% @users.each do |u| %>
-    
-  <div>
-    <div><%= image_tag "/avatar/#{u.id}", :class=>  "profile_img" %></div>
-    <div><a href="/users/<%= "#{u.id}"%>"><%= u.nome %></a></div>
-  </div>
 
-  <% end %>
-</div>
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Senha</th>
+      <th>Foto</th>
+      <th>Nome</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Email</th>
+      <th>Descricao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.login %></td>
+        <td><%= user.senha %></td>
+        <td><%= image_tag "/avatar/#{user.id}" %></td>
+        <td><%= user.nome %></td>
+        <td><%= user.cidade %></td>
+        <td><%= user.estado %></td>
+        <td><%= user.email %></td>
+        <td><%= user.descricao %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204161141) do
+ActiveRecord::Schema.define(version: 20141207031907) do
 
   create_table "users", force: true do |t|
     t.string   "login"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20141204161141) do
     t.string   "descricao"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.binary   "avatar",     limit: 10485760
+    t.boolean  "sexo"
   end
 
 end
