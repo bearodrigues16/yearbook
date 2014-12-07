@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logado, only: [:welcome, :show, :busca]
+  before_action :logado, only: [:welcome, :show, :busca, :edit, :update]
   before_action :naoLogado, only: [:new, :create]
-  before_action :ehUsuarioLogado, only: [:update, :edit]
+  before_action :ehUsuarioLogado, only: [:edit, :update]
 
 
   # GET /users
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    set_user
   end
 
   # GET /users/new
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to "/users/welcome", notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -100,6 +101,7 @@ class UsersController < ApplicationController
 
   def busca
     @resultados = User.where([" nome LIKE ?", "%#{params[:consulta]}%"])
+    @users = User.all
   end
 
 
@@ -112,13 +114,20 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       paramsCopy = params.require(:user).permit(:login, :senha, :permit, :nome, :cidade, :estado, :email, :descricao)
+      if params[:user][:avatar] != nil && params[:user][:avatar] != 0
       paramsCopy[:avatar]= params[:user][:avatar].read
+      end
+      if params[:user][:sexo] == 'M'
+        paramsCopy[:sexo] = true
+      else
+        paramsCopy[:sexo] = false
+      end
       paramsCopy
     end
     def logado
       if session[:user_id] != nil && session[:user_id] != 0
       @estaLogado = true
-      @usuario = User.find(session[:user_id])
+      @user = User.find(session[:user_id])
       else
         redirect_to "/", status: :found
       end
@@ -130,12 +139,8 @@ class UsersController < ApplicationController
     end
 
     def ehUsuarioLogado
-      if session[:user_id] != nil && session[:user_id] !=0
-        if session[:user_id] != params[:id]
-          redirect_to "/users", status: :found
-        end
-      else
-          redirect_to "/users/new", status: :found
+      unless session[:user_id].to_i == params[:id].to_i
+        redirect_to "/users", status: :found
       end
     end
 end

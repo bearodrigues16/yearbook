@@ -1,0 +1,12 @@
+<div class="avatar"><%= image_tag "/avatar/#{@user.id}", :class=>  "profile_img" %></div><br><br>
+
+       <span>Cidade: </span><%= @user.cidade %><br>
+       <span>Estado: </span><%= @user.estado %><br>
+       <span>Email: </span><%= @user.email %><br><br>
+      
+      <img src='<%=asset_path "aspascima.jpg"%>' class="aspascima"/>
+
+
+       <br><br><%= @user.descricao %><br><br>
+
+       <img src='<%=asset_path "aspasbaixo.jpg"%>' class="aspasbaixo"/><br><br>

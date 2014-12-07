@@ -1,16 +1,15 @@
-olá <%= @usuario.nome %>
+<div class="perfil">
 
-<%= image_tag "/avatar/#{@usuario.id}", :class=>  "profile_img" %>
+<h1 class="saudacao">olá,<br><br> <%= @user.nome %>.</h1><br><br>
 
-<%= link_to 'Editar meu perfil', edit_user_path(@usuario) %>
+<%=render 'info'%>
 
-<div id="users">
-  <% @users.each do |u| %>
-    
-  <div>
-    <div><%= image_tag "/avatar/#{u.id}", :class=>  "profile_img" %></div>
-    <div><a href="/users/<%= "#{u.id}"%>"><%= u.nome %></a></div>
-  </div>
 
-  <% end %>
+<div class="editbutton"><%= link_to 'Editar meu perfil', edit_user_path(@user) %></div>
+
 </div>
+
+
+<%= render 'showusers' %>  	
+
+

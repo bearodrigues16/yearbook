@@ -18,11 +18,11 @@
 
 	<% if @estaLogado != 0 && @estaLogado != nil && @estaLogado == true %>
  	
- 	 	[<a href="/users/welcome">Meu perfil</a>]
- 		<a href="/users/logout" class="logout">Sair</a>
+ 		<a href="/users/logout" class="cantoTela">[Sair]</a>
+ 	 	<a href="/users/welcome" class="cantoTela">[Meu perfil]</a>
 		<form action="/users/busca" method="GET">
-			<input type="text" name="consulta">
-			<button type="submit">Buscar</button>
+			<input type="text" name="consulta" class="busca">
+			<button type="submit" class="but_busca">Buscar</button>
 		</form>
 
 	<% else %>

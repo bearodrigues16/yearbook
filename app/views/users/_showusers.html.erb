@@ -1,0 +1,10 @@
+<div id="users">
+		<% @users.each do |u| %>
+			
+			<div class="users">
+	  	<div class="img"><a href="/users/<%= "#{u.id}"%>"><%= image_tag "/avatar/#{u.id}", :class=>  "profile_img" %></a></div><br>
+	  	<a href="/users/<%= "#{u.id}"%>" class="nome_img"><%= u.nome %></a>
+			</div>
+
+	<% end %>
+</div>
